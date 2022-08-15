@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from meetings.views import detail
 
 from website.views import welcome, date, about
 
@@ -24,5 +25,6 @@ urlpatterns = [
     path('', welcome, name="welcome"),
     path('date', date),
     path('about', about),
-    #path('meetings/', include('meetings.urls')),
+    path('meetings/<int:id>', detail),
+    # path('meetings/', include('meetings.urls')),
 ]
