@@ -8,9 +8,14 @@ from meetings.models import Meeting
 
 def welcome(request):
     #return HttpResponse('Welcome to my Meetings OnlineApp')
+    #las clases tienen un atributo .objets que tiene todos los objetos de la clase
+    #puede usarse para contar los objetos de la clase, obtener un objeto específico o todos los objetos
+    
+    # return render(request, "website/welcome.html",
+    #               {"num_meetings": Meeting.objects.count()})
 
-    return render(request, "website/welcome.html",
-                  {"num_meetings": Meeting.objects.count()})
+     return render(request, "website/welcome.html",
+                     {"meetings": Meeting.objects.all(),"num_meetings": Meeting.objects.count()})
 
 
 def date(request):

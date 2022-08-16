@@ -7,11 +7,16 @@
     <title>Test Django</title>
 </head>
 <body>
-    <h1>Meeting Planner Test App</h1>
+    <h1>Meeting Planner App</h1>
     <p>
-        Esta es la demo del curso de Django de <a href="https://www.pluralsight.com">Pluralsight</a>.
+        Demo del curso de Django de <a href="https://www.pluralsight.com">Pluralsight</a>.
     </p>
-    <p>Actualmente hay: {{num_meetings}} reuniones en la Base de Datos.</p>
+    <h2>Actualmente hay: {{num_meetings}} reuniones en la Base de Datos:</h2>
+    <ul>
+        {% for meeting in meetings %}
+            <li><a href="/meetings/{{meeting.id}}">{{meeting.title}} </a></li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
     
