@@ -14,7 +14,16 @@
     <h2>Actualmente hay: {{num_meetings}} reuniones en la Base de Datos:</h2>
     <ul>
         {% for meeting in meetings %}
-            <li><a href="/meetings/{{meeting.id}}">{{meeting.title}} </a></li>
+            <li>
+                <!-- link hardcodeado 
+                <a href="/meetings/{{meeting.id}}"> {{meeting.title}} </a>
+                -->
+
+                <!-- link dinamico: 
+                sintaxis url de django + nombre que le dimos al path en url.py + segundo argumento, en este caso id
+                 -->
+                 <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
+            </li>
         {% endfor %}
     </ul>
 </body>

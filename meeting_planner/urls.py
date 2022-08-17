@@ -25,6 +25,5 @@ urlpatterns = [
     path('', welcome, name="welcome"),
     path('date', date),
     path('about', about),
-    path('meetings/<int:id>', detail),
-    # path('meetings/', include('meetings.urls')),
+    path('meetings/<int:id>', detail, name="detail"),
 ]
