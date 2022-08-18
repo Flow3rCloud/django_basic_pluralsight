@@ -15,15 +15,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from meetings.views import detail
+from meetings.views import detail, room_list #importo las funciones de views.py de la app meetings
 
 from website.views import welcome, date, about
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', welcome, name="welcome"),
+    path('', welcome, name="welcome"), 
     path('date', date),
     path('about', about),
     path('meetings/<int:id>', detail, name="detail"),
+    path('meetings/rooms', room_list, name="rooms"), # primer argumento es la url, 2o el nombre de la función en views.py, 
+    #3o el nombre para linkear en la sintaxis {% url 'rooms' %} en el template html  
+    # path('meetings/', include('meetings.urls')),
 ]

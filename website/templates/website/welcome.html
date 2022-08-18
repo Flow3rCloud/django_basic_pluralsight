@@ -19,13 +19,15 @@
                 <a href="/meetings/{{meeting.id}}"> {{meeting.title}} </a>
                 -->
 
-                <!-- link dinamico: 
-                sintaxis url de django + nombre que le dimos al path en url.py + segundo argumento, en este caso id
+                <!-- link dinamico: (link building)
+                sintaxis url de django + nombre que le dimos al path en url.py para el mapping + segundo argumento, en este caso id
                  -->
                  <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
             </li>
         {% endfor %}
     </ul>
+    <br>
+    <a href="{% url 'rooms' %}">Ver listado de Salas de Reunión</a>
 </body>
 </html>
     

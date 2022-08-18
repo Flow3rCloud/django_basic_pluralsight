@@ -10,7 +10,7 @@ class Room(models.Model):
 
     #para visualizar mejor en pantalla de admin:
     def __str__(self):
-        return f"{self.name}: room {self.room_number} on floor {self.floor}"
+        return f"{self.name} - N° {self.room_number} - Piso: {self.floor}"
 
 
 class Meeting(models.Model):
@@ -25,4 +25,4 @@ class Meeting(models.Model):
 
     #para visualizar mejor en admin:
     def __str__(self):
-        return f"{self.title} at {self.start_time} on {self.date}"
+        return f"{self.title} a las: {self.start_time}, en fecha: {self.date}"

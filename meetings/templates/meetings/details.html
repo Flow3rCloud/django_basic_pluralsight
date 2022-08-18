@@ -11,6 +11,9 @@
     <p>Hora: {{meeting.start_time}}</p>
     <p>Lugar: {{meeting.room}}</p>
     <br>
+    <!-- link dinamico:  (link building)
+    sintaxis url de django + nombre que le dimos al path en url.py para el mapping entre comillas simples
+    -->
     <a href="{% url 'welcome' %}">Volver</a>
     <p></p>
 </body>
