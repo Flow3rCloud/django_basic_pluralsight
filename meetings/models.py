@@ -8,7 +8,7 @@ class Room(models.Model):
     name = models.CharField(max_length=50)
     floor = models.IntegerField()
     room_number = models.IntegerField()
-    image = models.ImageField(upload_to='imagenes/')
+    image = models.ImageField(upload_to='media/imagenes/')
 
     #para visualizar mejor en pantalla de admin: (y para ver mejor los objetos si los necesito como un str en algún template)
     def __str__(self):

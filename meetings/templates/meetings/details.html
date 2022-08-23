@@ -4,8 +4,10 @@
     <section>
     <h3>Reunión: {{meeting.title}}</h3>
     <p>Día: {{meeting.date}} <br>  
-    Hora: {{meeting.start_time}} <br>
-    Sala: {{meeting.room}}</p>
+        Hora: {{meeting.start_time}} <br>
+        Sala: {{meeting.room}} <br> 
+        <img src="{{ meeting.room.image }}"  width="80px">
+    </p>
     <br>
     <!-- link dinamico:  (link building)
     sintaxis url de django + nombre que le dimos al path en url.py para el mapping entre comillas simples
