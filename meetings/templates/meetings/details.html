@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reunión: {{meeting.title}}</title>
-</head>
-<body>
-    <p>Reunión para el día: {{meeting.date}}</p>
-    <p>Hora: {{meeting.start_time}}</p>
-    <p>Lugar: {{meeting.room}}</p>
+{% extends 'base.html' %}
+{% block title %} Reunión {{meeting.title}} {% endblock title %}
+{% block content %}
+    <section>
+    <h3>Reunión: {{meeting.title}}</h3>
+    <p>Día: {{meeting.date}} <br>  
+    Hora: {{meeting.start_time}} <br>
+    Sala: {{meeting.room}}</p>
     <br>
     <!-- link dinamico:  (link building)
     sintaxis url de django + nombre que le dimos al path en url.py para el mapping entre comillas simples
     -->
-    <a href="{% url 'welcome' %}">Volver</a>
-    <p></p>
-</body>
-</html>
+    </section>
+    <br>
+    <a href="{% url 'welcome' %}" class="strong" >Volver</a>
+{% endblock %}

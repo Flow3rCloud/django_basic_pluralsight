@@ -1,34 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Django</title>
-</head>
-<body>
-    <h1>Meeting Planner App</h1>
-    <p>
-        Demo del curso de Django de <a href="https://www.pluralsight.com">Pluralsight</a>.
-    </p>
-    <h2>Actualmente hay: {{num_meetings}} reuniones en la Base de Datos:</h2>
-    <ul>
-        {% for meeting in meetings %}
-            <li>
-                <!-- link hardcodeado 
-                <a href="/meetings/{{meeting.id}}"> {{meeting.title}} </a>
-                -->
+{% extends 'base.html' %}
+{% block title %}Meetings OnlineApp{% endblock title %}
+{% block content %}
+        <section>
+            <h3>Actualmente hay: {{num_meetings}} reuniones en la Base de Datos:</h3>
+            <ul>
+                {% for meeting in meetings %}
+                    <li>
+                        <!-- link hardcodeado 
+                        <a href="/meetings/{{meeting.id}}"> {{meeting.title}} </a>
+                        -->
 
-                <!-- link dinamico: (link building)
-                sintaxis url de django + nombre que le dimos al path en url.py para el mapping + segundo argumento, en este caso id
-                 -->
-                 <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
-            </li>
-        {% endfor %}
-    </ul>
-    <br>
-    <a href="{% url 'rooms' %}">Ver listado de Salas de Reunión</a>
-</body>
-</html>
+                        <!-- link dinamico: (link building)
+                        sintaxis url de django + nombre que le dimos al path en url.py para el mapping + segundo argumento, en este caso id
+                        -->
+                        <a href="{% url 'detail' meeting.id %}">{{meeting.title}}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+        <br>
+        <a href="{% url 'rooms' %}" class="strong">Listado de Salas de Reunión</a></strong>
+{% endblock content %}
     
 

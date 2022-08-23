@@ -7,7 +7,7 @@ def detail(request, id): #id es la clave primaria de la tabla Meeting
     meeting = get_object_or_404(Meeting, pk=id) #se pasa primero la tabla y luego el id
     return render(request, "meetings/details.html", {"meeting": meeting})
 
-def room_list(request):
+def rooms_list(request):
     rooms = Room.objects.all()
     return render(request, "meetings/rooms.html", {"rooms": rooms})
 

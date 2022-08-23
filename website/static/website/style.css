@@ -1,0 +1,41 @@
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Oswald', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.strong {
+    font-weight: 600;
+}
+
+a:hover {
+    color: blueviolet;
+}
+
+.container{
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.title{
+    display: flex;
+    justify-content: left;
+    align-content: center;
+}
+
+.title-text{
+    margin-left: 1em;
+}
+.room-img{
+    width: 35%;
+}
+
+section{
+    margin-top: 2em;
+}
